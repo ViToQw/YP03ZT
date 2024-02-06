@@ -31,6 +31,7 @@ namespace ConferenceOrganizers
         {
             InitializeComponent();
             CaptchaImage.Source = GenerateCaptcha();
+         
         }
 
         private BitmapImage GenerateCaptcha()

@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ConferenceOrganizers"
         mc:Ignorable="d"
-        Title="ParticipantsWindow" Height="600" Width="1000" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Icon="EventImage/Car.png">
-    <Grid>
+        Title="ParticipantsWindow" Height="600" Width="1000" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Icon="logo.png">
+    <Grid Style="{DynamicResource GridStyle}">
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="0.8*"/>
@@ -32,11 +32,10 @@
             <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
 
-        <TextBlock Grid.Row="0" Grid.Column="0" Background="#e1e4ff" Grid.ColumnSpan="8"/>
-        <TextBlock Grid.Column="2" Grid.ColumnSpan="4" Text="Участники" FontFamily="Tahoma" HorizontalAlignment="Center" Foreground="Black" FontWeight="Bold" VerticalAlignment="Center" FontSize="30"/>
-        <Image  Source="/Car.png" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="2"/>
+        <TextBlock Grid.Column="0" Grid.ColumnSpan="10" Background="White"/>
 
-        <DataGrid x:Name="GridAdmin" Grid.Column="1" Grid.ColumnSpan="6" Grid.Row="1" Grid.RowSpan="10" AutoGenerateColumns="False" Margin="10" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="15" Style="{StaticResource TextBlock}" IsReadOnly="True">
+        <TextBlock Grid.Column="2" Grid.ColumnSpan="4" Text="Участники" FontFamily="Tahoma" HorizontalAlignment="Center" Foreground="Black" FontWeight="Bold" VerticalAlignment="Center" FontSize="30"/>
+        <DataGrid Style="{DynamicResource MaterialDesignDataGrid}"  x:Name="GridAdmin" Grid.Column="1" Grid.ColumnSpan="9" Grid.Row="1" Grid.RowSpan="10" AutoGenerateColumns="False" Margin="10" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="15"  IsReadOnly="True">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ФИО" Binding="{Binding FIO}"/>
                 <DataGridTextColumn Header="Email" Binding="{Binding Email}"/>

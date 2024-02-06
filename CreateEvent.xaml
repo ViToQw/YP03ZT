@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ConferenceOrganizers" xmlns:xctk="clr-namespace:ControlLib;assembly=NumericUpDown"
         mc:Ignorable="d"
-        Title="CreateEvent" Height="600" Width="1000" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Icon="EventImage/Car.png">
-    <Grid>
+        Title="CreateEvent" Height="600" Width="1000" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Icon="logo.png">
+    <Grid Style="{DynamicResource GridStyle}">
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="0.8*"/>
@@ -18,8 +18,7 @@
             <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
-            <RowDefinition Height="1*"/>
-            <RowDefinition Height="1*"/>
+
         </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>
@@ -31,16 +30,16 @@
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
+        <TextBlock Grid.Column="0" Grid.ColumnSpan="10" Background="White"/>
 
-        <TextBlock Grid.Row="0" Grid.Column="0" Background="#e1e4ff" Grid.ColumnSpan="8"/>
-        <TextBlock Grid.Column="2" Grid.ColumnSpan="4" Text="Создать мероприятие и активность" FontFamily="Tahoma" HorizontalAlignment="Center" Foreground="Black" FontWeight="Bold" VerticalAlignment="Center" FontSize="30"/>
+        <TextBlock Grid.Row="0" Grid.Column="0"  Grid.ColumnSpan="8"/>
+        <TextBlock Grid.Column="2" Grid.ColumnSpan="4" Text="Создание нового мероприятия" FontFamily="Tahoma" HorizontalAlignment="Center" Foreground="Black" FontWeight="Bold" VerticalAlignment="Center" FontSize="30"/>
         <Image  Source="/Car.png" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="2"/>
-
-        <TextBlock Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="1" Text="Создать мероприятие" FontFamily="Tahoma" HorizontalAlignment="Center" Foreground="Black" FontWeight="Bold" VerticalAlignment="Center" FontSize="18"/>
+        <TextBlock Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="1" Text="Создание мероприятия" FontFamily="Tahoma" HorizontalAlignment="Center" Foreground="Black" FontWeight="Bold" VerticalAlignment="Center" FontSize="18"/>
         
         <TextBlock Text="Название:" Grid.Row="2" Grid.Column="1" Margin="10,0,0,0" FontSize="17" HorizontalAlignment="Right" VerticalAlignment="Center" FontFamily="Tahoma"/>
         <Border Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="2" Margin="10,5,10,5" Style="{DynamicResource CornerBorder}">
-            <ComboBox x:Name="NameEvent" Margin="3" FontSize="17" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" BorderBrush="Transparent" IsEditable="True" SelectionChanged="NameEvent_SelectionChanged"/>
+            <ComboBox x:Name="NameEvent" FontSize="17" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" BorderBrush="Transparent" IsEditable="True" SelectionChanged="NameEvent_SelectionChanged"/>
         </Border>
 
         <TextBlock Text="Дата:" Grid.Row="3" Grid.Column="1" Margin="10,0,0,0" FontSize="17" HorizontalAlignment="Right" VerticalAlignment="Center" FontFamily="Tahoma"/>
@@ -55,13 +54,15 @@
 
         <TextBlock Grid.Row="5" Text="Город:" Grid.Column="1"  Margin="10,0,0,0" FontSize="17" HorizontalAlignment="Right" VerticalAlignment="Center" FontFamily="Tahoma"/>
         <Border    Grid.Row="5" Grid.Column="2" Grid.ColumnSpan="2" Margin="10,5,10,5" Style="{DynamicResource CornerBorder}">
-            <ComboBox x:Name="CityEvent" Margin="3" FontSize="16" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" BorderBrush="Transparent" SelectionChanged="CityEvent_SelectionChanged"/>
+            <ComboBox x:Name="CityEvent"  FontSize="16" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" BorderBrush="Transparent" SelectionChanged="CityEvent_SelectionChanged"/>
         </Border>
-
-        <Image x:Name="mainImage" Source="{Binding 9}" Margin="10" Grid.Column="5" Grid.Row="2" Grid.RowSpan="5" Grid.ColumnSpan="2" VerticalAlignment="Stretch"/>
+        <Border Style="{DynamicResource CornerBorder}" Margin="25" Grid.Column="5" Grid.Row="2" Grid.RowSpan="5" Grid.ColumnSpan="2">
+            
+        <Image x:Name="mainImage" Grid.Column="5" Grid.Row="2" Grid.RowSpan="5" Grid.ColumnSpan="2" VerticalAlignment="Stretch"/>
+        </Border>
         <Button Name="PhotoButton" Grid.Column="5" Grid.Row="7" Style="{DynamicResource CustomDesignButton}" Grid.ColumnSpan="2" Width="260" Margin="5" Content="Добавить фото" FontFamily="Tahoma" FontSize="20" Padding="-15" HorizontalAlignment="Center" Click="PhotoButton_Click" />
 
-        <TextBlock Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="6" Text="Создать активность" FontFamily="Tahoma" HorizontalAlignment="Center" Foreground="Black" FontWeight="Bold" VerticalAlignment="Center" FontSize="18"/>
+        <TextBlock Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="6" Text="Создание активности" FontFamily="Tahoma" HorizontalAlignment="Center" Foreground="Black" FontWeight="Bold" VerticalAlignment="Center" FontSize="18"/>
 
         <TextBlock Grid.Row="7" Text="Название:" Grid.Column="1" Margin="10,0,0,0" FontSize="17" HorizontalAlignment="Right" VerticalAlignment="Center" FontFamily="Tahoma"/>
         <Border    Grid.Row="7" Grid.Column="2" Grid.ColumnSpan="2" Margin="10,5,10,5" Style="{DynamicResource CornerBorder}">
@@ -79,8 +80,8 @@
             <TextBox x:Name="DayAct" Margin="3" FontSize="17" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" BorderBrush="Transparent" KeyDown="DayAct_KeyDown"/>
         </Border>
 
-        <Button Name="OkButton" Grid.Column="5" Grid.Row="11" Style="{DynamicResource CustomDesignButton}" Width="100" Margin="5" FontSize="14" Padding="-10" Content="Ок" FontFamily="Tahoma" HorizontalAlignment="Right" BorderThickness="3" Click="OkButton_Click" />
-        <Button Name="CancelButton" Grid.Column="6" Grid.Row="11" Style="{DynamicResource CustomDesignButton}" Width="100" Margin="5" FontSize="14" Padding="-10" Content="Отмена" FontFamily="Tahoma" HorizontalAlignment="Left" BorderThickness="3" Click="CancelButton_Click" />
+        <Button Name="OkButton" Grid.Column="5" Grid.Row="9" Style="{DynamicResource CustomDesignButton}" Width="100" Margin="5" FontSize="14" Padding="-10" Content="Ок" FontFamily="Tahoma" HorizontalAlignment="Right" BorderThickness="3" Click="OkButton_Click" />
+        <Button Name="CancelButton" Grid.Column="6" Grid.Row="9" Style="{DynamicResource CustomDesignButton}" Width="100" Margin="5" FontSize="14" Padding="-10" Content="Отмена" FontFamily="Tahoma" HorizontalAlignment="Left" BorderThickness="3" Click="CancelButton_Click" />
 
     </Grid>
 </Window>

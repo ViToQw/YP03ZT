@@ -5,76 +5,71 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ConferenceOrganizers"
         mc:Ignorable="d"
-        Title="ParticipantProfil" Height="600" Width="1000" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Icon="EventImage/Car.png">
-    <Grid>
+        Title="ParticipantProfil" Height="600" Width="1000" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Icon="logo.png">
+    <Grid Style="{DynamicResource GridStyle}">
         <Grid.RowDefinitions>
-            <RowDefinition Height="1*"/>
-            <RowDefinition Height="0.8*"/>
-            <RowDefinition Height="1*"/>
-            <RowDefinition Height="1*"/>
-            <RowDefinition Height="1*"/>
-            <RowDefinition Height="1*"/>
-            <RowDefinition Height="1*"/>
-            <RowDefinition Height="1*"/>
-            <RowDefinition Height="1*"/>
-            <RowDefinition Height="1*"/>
-            <RowDefinition Height="1*"/>
-            <RowDefinition Height="1*"/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
         </Grid.RowDefinitions>
-
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="0.5*"/>
-            <ColumnDefinition Width="1*"/>
-            <ColumnDefinition Width="1*"/>
-            <ColumnDefinition Width="1*"/>
-            <ColumnDefinition Width="1*"/>
-            <ColumnDefinition Width="1*"/>
-            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="0.7*"/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
-        <TextBlock Grid.Row="0" Grid.Column="0" Background="#e1e4ff" Grid.ColumnSpan="8"/>
-        <TextBlock Grid.Column="1" Grid.ColumnSpan="5" Text="Профиль участника" FontFamily="Tahoma" HorizontalAlignment="Center" Foreground="Black" FontWeight="Bold" VerticalAlignment="Center" FontSize="30"/>
-        <Image  Source="/Car.png" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="2"/>
+        <TextBlock Grid.Column="0" Grid.ColumnSpan="10" Background="White"/>
 
-        <StackPanel Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="3" Grid.RowSpan="2">
-            <TextBlock x:Name="NameTime" Grid.Column="2" Grid.Row="1" Grid.ColumnSpan="3" Margin="10" Text="Добрый день!" FontFamily="Tahoma" HorizontalAlignment="Center" Foreground="Black" FontWeight="Bold" VerticalAlignment="Center" FontSize="20"/>
-            <TextBlock x:Name="FI" Grid.Column="2" Grid.Row="1" Grid.ColumnSpan="3" Text="Уважаемый" FontFamily="Tahoma" HorizontalAlignment="Center" Foreground="Black" FontWeight="Bold" VerticalAlignment="Center" FontSize="20"/>
-        </StackPanel>
+        <TextBlock Grid.Column="0" Grid.ColumnSpan="10" Text="Профиль участника" FontFamily="Tahoma" HorizontalAlignment="Center" Foreground="Black" FontWeight="Bold" VerticalAlignment="Center" FontSize="30"/>
 
-        <TextBlock Grid.Row="3" Text="Фамилия:" Grid.Column="1"  Margin="10,0,0,0" FontSize="17" HorizontalAlignment="Right" VerticalAlignment="Center" FontFamily="Tahoma"/>
-        <Border    Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="2" Margin="10,5,10,5" Style="{DynamicResource CornerBorder}">
+        <TextBlock x:Name="Greeting" Grid.Column="0" Grid.ColumnSpan="10" Grid.Row="1" Text="Добрый день!" FontFamily="Tahoma" HorizontalAlignment="Center" Foreground="Black" FontWeight="Bold" VerticalAlignment="Top" FontSize="20"/>
+            
+
+        <TextBlock Grid.Row="2" Text="Фамилия:" Grid.Column="0"  Margin="10,0,0,0" FontSize="17" HorizontalAlignment="Right" VerticalAlignment="Center" FontFamily="Tahoma"/>
+        <Border    Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Margin="10,5,10,5" Style="{DynamicResource CornerBorder}">
             <TextBox x:Name="Surname" Margin="3" FontSize="17" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" BorderBrush="Transparent" Text="{Binding Path=Surname}"/>
         </Border>
 
-        <TextBlock Grid.Row="4" Text="Имя:" Grid.Column="1"  Margin="10,0,0,0" FontSize="17" HorizontalAlignment="Right" VerticalAlignment="Center" FontFamily="Tahoma"/>
-        <Border    Grid.Row="4" Grid.Column="2" Grid.ColumnSpan="2" Margin="10,5,10,5" Style="{DynamicResource CornerBorder}">
+        <TextBlock Grid.Row="3" Text="Имя:" Grid.Column="0"  Margin="10,0,0,0" FontSize="17" HorizontalAlignment="Right" VerticalAlignment="Center" FontFamily="Tahoma"/>
+        <Border    Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" Margin="10,5,10,5" Style="{DynamicResource CornerBorder}">
             <TextBox x:Name="Name" Margin="3" FontSize="17" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" BorderBrush="Transparent" Text="{Binding Path=Name}"/>
         </Border>
 
-        <TextBlock Grid.Row="5" Text="Отчество:" Grid.Column="1"  Margin="10,0,0,0" FontSize="17" HorizontalAlignment="Right" VerticalAlignment="Center" FontFamily="Tahoma" />
-        <Border    Grid.Row="5" Grid.Column="2" Grid.ColumnSpan="2" Margin="10,5,10,5" Style="{DynamicResource CornerBorder}">
+        <TextBlock Grid.Row="4" Text="Отчество:" Grid.Column="0"  Margin="10,0,0,0" FontSize="17" HorizontalAlignment="Right" VerticalAlignment="Center" FontFamily="Tahoma" />
+        <Border    Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" Margin="10,5,10,5" Style="{DynamicResource CornerBorder}">
             <TextBox x:Name="Patronimic" Margin="3" FontSize="17" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" BorderBrush="Transparent" Text="{Binding Path=Patronimic}"/>
         </Border>
 
-        <TextBlock Grid.Row="6" Text="Email:" Grid.Column="1"  Margin="10,0,0,0" FontSize="17" HorizontalAlignment="Right" VerticalAlignment="Center" FontFamily="Tahoma"/>
-        <Border    Grid.Row="6" Grid.Column="2" Grid.ColumnSpan="2" Margin="10,5,10,5" Style="{DynamicResource CornerBorder}">
+        <TextBlock Grid.Row="5" Text="Email:" Grid.Column="0"  Margin="10,0,0,0" FontSize="17" HorizontalAlignment="Right" VerticalAlignment="Center" FontFamily="Tahoma"/>
+        <Border    Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2" Margin="10,5,10,5" Style="{DynamicResource CornerBorder}">
             <TextBox x:Name="Email" Margin="3" FontSize="17" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" BorderBrush="Transparent" Text="{Binding Path=Email}"/>
         </Border>
 
-        <TextBlock Grid.Row="7" Text="Телефон:" Grid.Column="1"  Margin="10,0,0,0" FontSize="17" HorizontalAlignment="Right" VerticalAlignment="Center" FontFamily="Tahoma"/>
-        <Border    Grid.Row="7" Grid.Column="2" Grid.ColumnSpan="2" Margin="10,5,10,5" Style="{DynamicResource CornerBorder}">
+        <TextBlock Grid.Row="6" Text="Телефон:" Grid.Column="0"  Margin="10,0,0,0" FontSize="17" HorizontalAlignment="Right" VerticalAlignment="Center" FontFamily="Tahoma"/>
+        <Border    Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="2" Margin="10,5,10,5" Style="{DynamicResource CornerBorder}">
             <TextBox x:Name="Phone" Margin="3" FontSize="17" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" BorderBrush="Transparent" KeyDown="Phone_KeyDown" LostFocus="Phone_LostFocus" Text="{Binding Path=Phone}"/>
         </Border>
 
-        <TextBlock Grid.Row="8" Text="Пароль:" Grid.Column="1"  Margin="10,0,0,0" FontSize="17" HorizontalAlignment="Right" VerticalAlignment="Center" FontFamily="Tahoma"/>
-        <Border    Grid.Row="8" Grid.Column="2" Grid.ColumnSpan="2" Margin="10,5,10,5" Style="{DynamicResource CornerBorder}">
+        <TextBlock Grid.Row="7" Text="Пароль:" Grid.Column="0"  Margin="10,0,0,0" FontSize="17" HorizontalAlignment="Right" VerticalAlignment="Center" FontFamily="Tahoma"/>
+        <Border    Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="2" Margin="10,5,10,5" Style="{DynamicResource CornerBorder}">
             <PasswordBox x:Name="Password" Margin="3" FontSize="17" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" BorderBrush="Transparent" LostFocus="Password_LostFocus"/>
         </Border>
 
-        <Button Name="RegButton" Grid.Column="2" Grid.ColumnSpan="2" Width="200" Grid.Row="10" Style="{DynamicResource CustomDesignButton}" Margin="10,5,0,5" FontSize="16" Padding="-10" Content="Изменить данные" FontFamily="Tahoma" HorizontalAlignment="Center" BorderThickness="3" Click="RegButton_Click" />
-        
-        <Image x:Name="mainImage" Grid.Column="5" Grid.ColumnSpan="2" Grid.Row="3" Grid.RowSpan="7" HorizontalAlignment="Stretch" Margin="10,25,10,55" VerticalAlignment="Top" Source="{Binding Path=Photo}"/>
-        <Button Name="ImageBut" Grid.Column="5" Grid.ColumnSpan="2" Width="200" Grid.Row="10" Style="{DynamicResource CustomDesignButton}" Margin="10,5,0,5" FontSize="16" Padding="-10" Content="Сменить фото" FontFamily="Tahoma" HorizontalAlignment="Center" BorderThickness="3" Click="ImageBut_Click" />
+        <Button Name="RegButton"  Margin="10 5" Grid.Column="1" Grid.ColumnSpan="2" Width="200" Grid.Row="8" Style="{DynamicResource CustomDesignButton}" FontSize="16" Content="Изменить данные" FontFamily="Tahoma" HorizontalAlignment="Right"  Click="RegButton_Click" />
+        <Button Name="Exit"  Margin="10 5" Grid.Column="1" Grid.ColumnSpan="2" Width="120" Grid.Row="8" Style="{DynamicResource CustomDesignButton}" FontSize="16"  Content="Выйти" FontFamily="Tahoma" HorizontalAlignment="Left"  Click="RegButton_Click" />
+
+        <Border Grid.Row="2" Grid.Column="3" Grid.ColumnSpan="2" Grid.RowSpan="6" Margin="10 0" Style="{DynamicResource CornerBorder}">
+            <Image x:Name="mainImage" Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="3" Grid.RowSpan="7" HorizontalAlignment="Stretch" VerticalAlignment="Top" Source="{Binding Path=Photo}"/>
+        </Border>
+        <Button Name="ImageBut" Grid.Column="3" Grid.ColumnSpan="2" Width="200" Grid.Row="8" Style="{DynamicResource CustomDesignButton}" Margin="10,5,0,5" FontSize="16" Padding="-10" Content="Сменить фото" FontFamily="Tahoma" HorizontalAlignment="Center" BorderThickness="3" Click="ImageBut_Click" />
 
     </Grid>
 </Window>

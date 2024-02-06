@@ -59,6 +59,7 @@
     <None Remove="JuryImage\foto7.jpg" />
     <None Remove="JuryImage\foto8.jpg" />
     <None Remove="JuryImage\foto9.jpg" />
+    <None Remove="logo.png" />
     <None Remove="ModeratorImage\foto10.jpg" />
     <None Remove="ModeratorImage\foto11.jpg" />
     <None Remove="ModeratorImage\foto12.jpg" />
@@ -185,6 +186,7 @@
   <ItemGroup>
     <PackageReference Include="CsvHelper" Version="30.1.0" />
     <PackageReference Include="EntityFramework" Version="6.4.4" />
+    <PackageReference Include="MaterialDesignThemes" Version="4.9.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.15" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.14" />
     <PackageReference Include="NumericUpDown" Version="3.0.2" />
@@ -221,6 +223,7 @@
     <Resource Include="JuryImage\foto7.jpg" />
     <Resource Include="JuryImage\foto8.jpg" />
     <Resource Include="JuryImage\foto9.jpg" />
+    <Resource Include="logo.png" />
     <Resource Include="ModeratorImage\foto10.jpg" />
     <Resource Include="ModeratorImage\foto11.jpg" />
     <Resource Include="ModeratorImage\foto12.jpg" />

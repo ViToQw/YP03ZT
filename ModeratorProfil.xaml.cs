@@ -28,21 +28,22 @@ namespace ConferenceOrganizers
             LoadEvents();
             moderatorId = moderator.Id;
 
-            FI.Text = $"{moderator.Surname} {moderator.Name}";
 
             var currentTime = DateTime.Now.TimeOfDay;
             if (currentTime >= TimeSpan.FromHours(9) && currentTime < TimeSpan.FromHours(11))
             {
-                NameTime.Text = "Доброе утро!";
+                Greeting.Text = "Доброе утро!";
             }
             else if (currentTime >= TimeSpan.FromHours(11.01) && currentTime < TimeSpan.FromHours(18))
             {
-                NameTime.Text = "Добрый день!";
+                Greeting.Text = "Добрый день!";
             }
             else if (currentTime >= TimeSpan.FromHours(18.01) && currentTime <= TimeSpan.FromHours(24))
             {
-                NameTime.Text = "Добрый вечер!";
+                Greeting.Text = "Добрый вечер!";
             }
+            Greeting.Text += $"\n{moderator.Surname} {moderator.Name}";
+
 
             var bitmap = new BitmapImage();
             bitmap.BeginInit();
@@ -146,6 +147,13 @@ namespace ConferenceOrganizers
             {
                 MessageBox.Show("Пожалуйста, выберите мероприятие и активность", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
             }
+        }
+
+        private void Exit_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow main = new MainWindow();
+            main.Show();
+            this.Close();
         }
     }
 }

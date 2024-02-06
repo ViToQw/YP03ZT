@@ -28,21 +28,21 @@ namespace ConferenceOrganizers
 
             this.jury = jury;
 
-            FI.Text = $"{jury.Surname} {jury.Name}";
-
+          
             var currentTime = DateTime.Now.TimeOfDay;
             if (currentTime >= TimeSpan.FromHours(9) && currentTime < TimeSpan.FromHours(11))
             {
-                NameTime.Text = "Доброе утро!";
+                Greeting.Text = "Доброе утро!";
             }
             else if (currentTime >= TimeSpan.FromHours(11.01) && currentTime < TimeSpan.FromHours(18))
             {
-                NameTime.Text = "Добрый день!";
+                Greeting.Text = "Добрый день!";
             }
             else if (currentTime >= TimeSpan.FromHours(18.01) && currentTime <= TimeSpan.FromHours(24))
             {
-                NameTime.Text = "Добрый вечер!";
+                Greeting.Text = "Добрый вечер!";
             }
+            Greeting.Text += $"\n{jury.Surname} {jury.Name}";
 
             var bitmap = new BitmapImage();
             bitmap.BeginInit();
@@ -76,6 +76,13 @@ namespace ConferenceOrganizers
 
                 GridAdmin.ItemsSource = activityObjects;
             }
+        }
+
+        private void Exit_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow main = new MainWindow();
+            main.Show();
+            this.Close();
         }
     }
 }

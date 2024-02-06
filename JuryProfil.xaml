@@ -5,51 +5,44 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ConferenceOrganizers"
         mc:Ignorable="d"
-        Title="JuryProfil" Height="600" Width="1000" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Icon="EventImage/Car.png">
-    <Grid>
+        Title="JuryProfil" Height="600" Width="1000" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Icon="logo.png">
+    <Grid Style="{DynamicResource GridStyle}">
         <Grid.RowDefinitions>
-            <RowDefinition Height="1*"/>
-            <RowDefinition Height="0.8*"/>
-            <RowDefinition Height="1*"/>
-            <RowDefinition Height="1*"/>
-            <RowDefinition Height="1*"/>
-            <RowDefinition Height="1*"/>
-            <RowDefinition Height="1*"/>
-            <RowDefinition Height="1*"/>
-            <RowDefinition Height="1*"/>
-            <RowDefinition Height="1*"/>
-            <RowDefinition Height="1*"/>
-            <RowDefinition Height="1*"/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
         </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="0.5*"/>
-            <ColumnDefinition Width="1*"/>
-            <ColumnDefinition Width="1*"/>
-            <ColumnDefinition Width="1*"/>
-            <ColumnDefinition Width="1*"/>
-            <ColumnDefinition Width="1*"/>
-            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
-        <TextBlock Grid.Row="0" Grid.Column="0" Background="#e1e4ff" Grid.ColumnSpan="8"/>
-        <TextBlock Grid.Column="1" Grid.ColumnSpan="5" Text="Жюри" FontFamily="Tahoma" HorizontalAlignment="Center" Foreground="Black" FontWeight="Bold" VerticalAlignment="Center" FontSize="30"/>
-        <Image  Source="/Car.png" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="2"/>
+        <TextBlock Grid.Column="0" Grid.ColumnSpan="10" Background="White"/>
 
-        <StackPanel Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="3" Grid.RowSpan="2">
-            <TextBlock x:Name="NameTime" Grid.Column="2" Grid.Row="1" Grid.ColumnSpan="3" Margin="10" Text="Добрый день!" FontFamily="Tahoma" HorizontalAlignment="Center" Foreground="Black" FontWeight="Bold" VerticalAlignment="Center" FontSize="20"/>
-            <TextBlock x:Name="FI" Grid.Column="2" Grid.Row="1" Grid.ColumnSpan="3" Text="Уважаемый" FontFamily="Tahoma" HorizontalAlignment="Center" Foreground="Black" FontWeight="Bold" VerticalAlignment="Center" FontSize="20"/>
-        </StackPanel>
+        <TextBlock Grid.Column="0" Grid.ColumnSpan="3" Text="Окно жюри" FontFamily="Tahoma" HorizontalAlignment="Center" Foreground="Black" FontWeight="Bold" VerticalAlignment="Center" FontSize="30"/>
 
-        <Image x:Name="mainImage" Grid.Column="4" Grid.ColumnSpan="3" Grid.Row="1" Grid.RowSpan="2" HorizontalAlignment="Stretch" Margin="2" VerticalAlignment="Top" Source="{Binding Path=Photo}"/>
+        <Border Grid.Row="1" Margin="70 60 70 10" Grid.RowSpan="2" Style="{DynamicResource CornerBorder}">
+           
+        <Image x:Name="mainImage"   HorizontalAlignment="Stretch" Margin="2" VerticalAlignment="Top" Source="{Binding Path=Photo}"/>
+        </Border>
 
-        <DataGrid x:Name="GridAdmin" Grid.Column="1" Grid.ColumnSpan="6" Grid.Row="3" Grid.RowSpan="11" AutoGenerateColumns="False" Margin="10" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="15" Style="{StaticResource TextBlock}" IsReadOnly="True">
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="Название мероприятия" Binding="{Binding EventName}"/>
-                <DataGridTextColumn Header="Название активности" Binding="{Binding Name}"/>
-                <DataGridTextColumn Header="Время начала" Binding="{Binding StartTime}"/>
-                <DataGridTextColumn Header="Кол-во дней" Binding="{Binding Day}"/>
-            </DataGrid.Columns>
-        </DataGrid>
+            <TextBlock x:Name="Greeting" Grid.Column="0" Grid.Row="1"  Text="Добрый день" FontFamily="Tahoma" HorizontalAlignment="Center" Foreground="Black" FontWeight="Bold" VerticalAlignment="Top" FontSize="20"/>
+            <Button Name="Exit" Height="50"  Width="200" Grid.Row="3" Style="{DynamicResource CustomDesignButton}"  FontSize="22"  Content="Выйти" FontFamily="Tahoma" HorizontalAlignment="Center" BorderThickness="3" Click="Exit_Click"  />
+
+
+        <Border Style="{DynamicResource CornerBorder}" Grid.Column="1"  Grid.Row="1" Grid.RowSpan="3" Grid.ColumnSpan="2" Margin="30 0 30 60" >
+            <DataGrid x:Name="GridAdmin" Grid.Column="1"  Grid.Row="1" Grid.RowSpan="3" Grid.ColumnSpan="2" AutoGenerateColumns="False" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="15" Style="{DynamicResource MaterialDesignDataGrid}" IsReadOnly="True">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Название мероприятия" Binding="{Binding EventName}"/>
+                    <DataGridTextColumn Header="Название активности" Binding="{Binding Name}"/>
+                    <DataGridTextColumn Header="Время начала" Binding="{Binding StartTime}"/>
+                    <DataGridTextColumn Header="Кол-во дней" Binding="{Binding Day}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Border>
+        
     </Grid>
 </Window>

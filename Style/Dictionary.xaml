@@ -37,22 +37,20 @@
     </Style>
 
     <Style x:Key="CornerBorder" >
-        <Setter Property="Border.BorderBrush" Value="#ff4a6d"/>
+        <Setter Property="Border.BorderBrush" Value="#FF219FD2"/>
         <Setter Property="Border.BorderThickness" Value="3"/>
-        <Setter Property="Border.CornerRadius" Value="10"/>
         <Setter Property="Border.Background" Value="White"/>
     </Style>
 
     <Style x:Key="CustomDesignButton" TargetType="Button">
-        <Setter Property="Foreground" Value="#ff4a6d" />
+        <Setter Property="Foreground" Value="Black" />
         <Setter Property="Margin" Value="0, 1.5" />
         <Setter Property="FontFamily" Value="Tahoma" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
-                    <Border x:Name="border" BorderBrush="#ff4a6d" 
-                            BorderThickness="3" Background="#fff" SnapsToDevicePixels="true"
-                            Padding="20, 10" CornerRadius="10">
+                    <Border x:Name="border" BorderBrush="#FF219FD2" 
+                            BorderThickness="3" Background="#fff" SnapsToDevicePixels="true">
                         <ContentPresenter x:Name="contentPresenter" Focusable="False" 
                                           HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" 
                                           RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" 
@@ -60,12 +58,12 @@
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter TargetName="border" Property="Background" Value="#ff4a6d" />
-                            <Setter TargetName="border" Property="BorderBrush" Value="#ff4a6d" />
+                            <Setter TargetName="border" Property="Background" Value="#FF219FD2" />
+                            <Setter TargetName="border" Property="BorderBrush" Value="#FF219FD2" />
                             <Setter Property="Foreground" Value="#fff" />
                         </Trigger>
                         <Trigger Property="IsPressed" Value="True">
-                            <Setter TargetName="border" Property="Background" Value="{DynamicResource LowFocusingAttentionColor}" />
+                            <Setter TargetName="border" Property="Background" Value="#FF117198" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -91,4 +89,20 @@
         <Setter Property="Border.CornerRadius" Value="10"/>
         <Setter Property="Control.FontFamily" Value = "Tahoma" />
     </Style>
+
+    
+    
+    <Style x:Key="TextBoxStyle" TargetType="TextBox">
+
+    </Style>
+    <Style x:Key="ComboBoxStyle" TargetType="ComboBox">
+
+    </Style>
+    <Style x:Name="ButtonStyle" TargetType="Button">
+
+    </Style>
+    <Style x:Key="GridStyle" TargetType="Grid">
+        <Setter Property="Background" Value="#FFF3F3F3"/>
+    </Style>
+
 </ResourceDictionary>

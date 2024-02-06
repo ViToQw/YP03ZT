@@ -28,21 +28,22 @@ namespace ConferenceOrganizers
 
             this.DataContext = participant;
 
-            FI.Text = $"{participant.Surname} {participant.Name}";
 
             var currentTime = DateTime.Now.TimeOfDay;
             if (currentTime >= TimeSpan.FromHours(9) && currentTime < TimeSpan.FromHours(11))
             {
-                NameTime.Text = "Доброе утро!";
+                Greeting.Text = "Доброе утро!";
             }
             else if (currentTime >= TimeSpan.FromHours(11.01) && currentTime < TimeSpan.FromHours(18))
             {
-                NameTime.Text = "Добрый день!";
+                Greeting.Text = "Добрый день!";
             }
             else if (currentTime >= TimeSpan.FromHours(18.01) && currentTime <= TimeSpan.FromHours(24))
             {
-                NameTime.Text = "Добрый вечер!";
+                Greeting.Text = "Добрый вечер!";
             }
+            Greeting.Text += $"\n{participant.Surname} {participant.Name}";
+
 
             var bitmap = new BitmapImage();
             bitmap.BeginInit();

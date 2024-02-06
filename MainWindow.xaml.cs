@@ -36,7 +36,7 @@ namespace ConferenceOrganizers
         {
             InitializeComponent();
 
-            ParsingCountry();
+          /*  ParsingCountry();
             ParsingCourse();
             ParsingCity();
 
@@ -49,7 +49,7 @@ namespace ConferenceOrganizers
             ParsingEvent();
 
             ParsingActivityEvent();
-            ParsingActivityJury();
+            ParsingActivityJury();*/
 
             fullList = context.Events.ToList();
             fullList = context.Events.Include(e => e.City).ToList();
