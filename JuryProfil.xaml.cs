@@ -28,21 +28,20 @@ namespace ConferenceOrganizers
 
             this.jury = jury;
 
-          
-            var currentTime = DateTime.Now.TimeOfDay;
-            if (currentTime >= TimeSpan.FromHours(9) && currentTime < TimeSpan.FromHours(11))
+
+            DateTime dateTime = DateTime.Now;
+            if (dateTime.Hour >= 9 && (dateTime.Hour < 11 || (dateTime.Hour <= 11 && dateTime.Minute == 0)))
             {
-                Greeting.Text = "Доброе утро!";
+                Greeting.Text = $"Доброе утро!\n{jury.Name} {jury.Patronimic}";
             }
-            else if (currentTime >= TimeSpan.FromHours(11.01) && currentTime < TimeSpan.FromHours(18))
+            else if ((dateTime.Hour >= 11 && dateTime.Minute == 1) && (dateTime.Hour < 18 || (dateTime.Hour <= 18 && dateTime.Minute == 0)))
             {
-                Greeting.Text = "Добрый день!";
+                Greeting.Text = $"Добрый день!\n{jury.Name} {jury.Patronimic}";
             }
-            else if (currentTime >= TimeSpan.FromHours(18.01) && currentTime <= TimeSpan.FromHours(24))
+            else
             {
-                Greeting.Text = "Добрый вечер!";
+                Greeting.Text = $"Добрый вечер!\n{jury.Name} {jury.Patronimic}";
             }
-            Greeting.Text += $"\n{jury.Surname} {jury.Name}";
 
             var bitmap = new BitmapImage();
             bitmap.BeginInit();
@@ -80,8 +79,6 @@ namespace ConferenceOrganizers
 
         private void Exit_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow main = new MainWindow();
-            main.Show();
             this.Close();
         }
     }

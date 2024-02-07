@@ -323,4 +323,10 @@
     <Resource Include="UserImage\foto9.jpg" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Update="PasswordToVisibilityConverter.cs">
+      <CustomToolNamespace>ConferenceOrganizers</CustomToolNamespace>
+    </Compile>
+  </ItemGroup>
+
 </Project>

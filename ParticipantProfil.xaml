@@ -64,7 +64,7 @@
         </Border>
 
         <Button Name="RegButton"  Margin="10 5" Grid.Column="1" Grid.ColumnSpan="2" Width="200" Grid.Row="8" Style="{DynamicResource CustomDesignButton}" FontSize="16" Content="Изменить данные" FontFamily="Tahoma" HorizontalAlignment="Right"  Click="RegButton_Click" />
-        <Button Name="Exit"  Margin="10 5" Grid.Column="1" Grid.ColumnSpan="2" Width="120" Grid.Row="8" Style="{DynamicResource CustomDesignButton}" FontSize="16"  Content="Выйти" FontFamily="Tahoma" HorizontalAlignment="Left"  Click="RegButton_Click" />
+        <Button Name="Exit"  Margin="10 5" Grid.Column="1" Grid.ColumnSpan="2" Width="120" Grid.Row="8" Style="{DynamicResource CustomDesignButton}" FontSize="16"  Content="Выйти" FontFamily="Tahoma" HorizontalAlignment="Left" Click="Exit_Click"   />
 
         <Border Grid.Row="2" Grid.Column="3" Grid.ColumnSpan="2" Grid.RowSpan="6" Margin="10 0" Style="{DynamicResource CornerBorder}">
             <Image x:Name="mainImage" Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="3" Grid.RowSpan="7" HorizontalAlignment="Stretch" VerticalAlignment="Top" Source="{Binding Path=Photo}"/>

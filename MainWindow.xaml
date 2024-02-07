@@ -38,7 +38,7 @@
             <Image  Width="120" Source="/logo.png"/>
             <TextBlock Margin="0 10 0 0" Grid.Column="1" TextWrapping="Wrap"  FontSize="26" Text="Конференции по информационной безопасности"/>
             <Border Style="{DynamicResource CornerBorder}" Grid.Column="2"   Grid.ColumnSpan="2" Height="50"  Width="500">
-                <TextBox x:Name="StrokaPoiska" Style="{DynamicResource TextBoxStyle}" Width="500" Grid.Column="2"  Height="50" Grid.ColumnSpan="2"/>
+                <TextBox x:Name="StrokaPoiska" Style="{DynamicResource TextBoxStyle}" Width="500" Grid.Column="2" FontSize="22" TextAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  Height="50" Grid.ColumnSpan="2" TextChanged="StrokaPoiska_TextChanged" />
 
             </Border>
             <TextBlock FontSize="24" Text="Поиск" Grid.ColumnSpan="2" Grid.Column="2" TextAlignment="Center" Foreground="#FF707070" VerticalAlignment="Center" HorizontalAlignment="Center" Height="34" Width="74"  >
@@ -55,13 +55,13 @@
             </TextBlock>
             <TextBlock Text="Фильтровать по: " Margin="0 8 0 0" Grid.Column="4"  TextAlignment="Center"  FontSize="20" Foreground="Gray"/>
 
-            <Border Grid.Column="4" Height="50"  HorizontalAlignment="Center" Width="200" Style="{DynamicResource CornerBorder}">
-                <ComboBox x:Name="DiscountFilter2" Grid.Column="4"  Height="50"  HorizontalAlignment="Center" Width="200" SelectionChanged="DiscountFilter2_SelectionChanged" >
-                    <ComboBoxItem Content="По названию" Height="40" VerticalAlignment="Stretch"/>
-                    <ComboBoxItem Content="По убыванию даты" Height="40" VerticalAlignment="Stretch"/>
-                    <ComboBoxItem Content="По возрастанию даты" Height="40" VerticalAlignment="Stretch"/>
-                    <ComboBoxItem Content="По городу" Height="40" VerticalAlignment="Stretch"/>
-                    <ComboBoxItem Content="Сброс фильтра" Height="40" VerticalAlignment="Stretch"/>
+            <Border Grid.Column="4" Height="50"  HorizontalAlignment="Center" Width="230" Style="{DynamicResource CornerBorder}">
+                <ComboBox x:Name="DiscountFilter2" Grid.Column="4"  Height="50" FontSize="20"  HorizontalAlignment="Center" Width="230" SelectionChanged="DiscountFilter2_SelectionChanged" >
+                    <ComboBoxItem Content="По названию" Height="40" VerticalAlignment="Stretch" FontSize="18"/>
+                    <ComboBoxItem Content="По убыванию даты" Height="40" VerticalAlignment="Stretch" FontSize="18"/>
+                    <ComboBoxItem Content="По возрастанию даты" Height="40" VerticalAlignment="Stretch" FontSize="18"/>
+                    <ComboBoxItem Content="По городу" Height="40" VerticalAlignment="Stretch" FontSize="18"/>
+                    <ComboBoxItem Content="Без фильтра" Height="40" VerticalAlignment="Stretch" FontSize="18"/>
                 </ComboBox>
             </Border>
            

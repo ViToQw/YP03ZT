@@ -43,7 +43,7 @@ namespace ConferenceOrganizers
 
         private void OkButton_Click(object sender, RoutedEventArgs e)
         {
-            MessageBoxResult result = MessageBox.Show("Зарегестрировать нового жюри/модератора?", "Сообщение", MessageBoxButton.YesNo, MessageBoxImage.Asterisk);
+            MessageBoxResult result = MessageBox.Show("Создать новое мероприятие?", "Сообщение", MessageBoxButton.YesNo, MessageBoxImage.Asterisk);
             if (result == MessageBoxResult.Yes)
             {
                 DateTime date = datePicker.SelectedDate ?? DateTime.Today;
@@ -133,7 +133,7 @@ namespace ConferenceOrganizers
                         context.SaveChanges();
                     }
 
-                    MessageBox.Show("Вы создали мероприятие и активность!", "Сообщение", MessageBoxButton.OK, MessageBoxImage.Information);
+                    MessageBox.Show("Вы создали мероприятие!", "Сообщение", MessageBoxButton.OK, MessageBoxImage.Information);
                     this.Close();
                 }
                 else
