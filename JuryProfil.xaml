@@ -15,7 +15,7 @@
         </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="0.9*"/>
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
@@ -25,24 +25,23 @@
         <TextBlock Grid.Column="0" Grid.ColumnSpan="3" Text="Окно жюри" FontFamily="Tahoma" HorizontalAlignment="Center" Foreground="Black" FontWeight="Bold" VerticalAlignment="Center" FontSize="30"/>
 
         <Border Grid.Row="1" Margin="70 60 70 10" Grid.RowSpan="2" Style="{DynamicResource CornerBorder}">
-           
-        <Image x:Name="mainImage"   HorizontalAlignment="Stretch" Margin="2" VerticalAlignment="Top" Source="{Binding Path=Photo}"/>
+
+            <Image x:Name="mainImage" Grid.Row="1" Grid.RowSpan="2" Height="auto" HorizontalAlignment="Stretch" Margin="2" VerticalAlignment="Top" Source="{Binding Path=Photo}"/>
         </Border>
 
             <TextBlock x:Name="Greeting" Grid.Column="0" Grid.Row="1"  Text="Добрый день" FontFamily="Tahoma" HorizontalAlignment="Center" Foreground="Black" FontWeight="Bold" VerticalAlignment="Top" FontSize="20"/>
-            <Button Name="Exit" Height="50"  Width="200" Grid.Row="3" Style="{DynamicResource CustomDesignButton}"  FontSize="22"  Content="Выйти" FontFamily="Tahoma" HorizontalAlignment="Center" BorderThickness="3" Click="Exit_Click"  />
+            <Button Name="Exit" Height="50"  Width="170" Grid.Row="3" Style="{DynamicResource CustomDesignButton}"  FontSize="22"  Content="Выйти" FontFamily="Tahoma" HorizontalAlignment="Center" BorderThickness="3" Click="Exit_Click"  />
 
 
-        <Border Style="{DynamicResource CornerBorder}" Grid.Column="1"  Grid.Row="1" Grid.RowSpan="3" Grid.ColumnSpan="2" Margin="30 0 30 60" >
-            <DataGrid x:Name="GridAdmin" Grid.Column="1"  Grid.Row="1" Grid.RowSpan="3" Grid.ColumnSpan="2" AutoGenerateColumns="False" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="15" Style="{DynamicResource MaterialDesignDataGrid}" IsReadOnly="True">
-                <DataGrid.Columns>
-                    <DataGridTextColumn Header="Название мероприятия" Binding="{Binding EventName}"/>
-                    <DataGridTextColumn Header="Название активности" Binding="{Binding Name}"/>
-                    <DataGridTextColumn Header="Время начала" Binding="{Binding StartTime}"/>
-                    <DataGridTextColumn Header="Кол-во дней" Binding="{Binding Day}"/>
-                </DataGrid.Columns>
-            </DataGrid>
-        </Border>
-        
+
+        <DataGrid Margin="5 1" x:Name="GridAdmin" Grid.Column="1"  Grid.Row="1" Grid.RowSpan="3" Width="auto" Height="auto" Grid.ColumnSpan="2" AutoGenerateColumns="False" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="15" Style="{DynamicResource MaterialDesignDataGrid}" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Название мероприятия" Binding="{Binding EventName}"/>
+                <DataGridTextColumn Header="Название активности" Binding="{Binding Name}"/>
+                <DataGridTextColumn Header="Время начала" Binding="{Binding StartTime}"/>
+                <DataGridTextColumn Header="Кол-во дней" Binding="{Binding Day}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
     </Grid>
 </Window>

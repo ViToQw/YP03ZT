@@ -55,8 +55,8 @@
             </TextBlock>
             <TextBlock Text="Фильтровать по: " Margin="0 8 0 0" Grid.Column="4"  TextAlignment="Center"  FontSize="20" Foreground="Gray"/>
 
-            <Border Grid.Column="4" Height="50"  HorizontalAlignment="Center" Width="230" Style="{DynamicResource CornerBorder}">
-                <ComboBox x:Name="DiscountFilter2" Grid.Column="4"  Height="50" FontSize="20"  HorizontalAlignment="Center" Width="230" SelectionChanged="DiscountFilter2_SelectionChanged" >
+            <Border Grid.Column="4" Height="50"  HorizontalAlignment="Center" Width="240" Style="{DynamicResource CornerBorder}">
+                <ComboBox x:Name="DiscountFilter2" Grid.Column="4"  Height="50" FontSize="20" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Width="230" SelectionChanged="DiscountFilter2_SelectionChanged" >
                     <ComboBoxItem Content="По названию" Height="40" VerticalAlignment="Stretch" FontSize="18"/>
                     <ComboBoxItem Content="По убыванию даты" Height="40" VerticalAlignment="Stretch" FontSize="18"/>
                     <ComboBoxItem Content="По возрастанию даты" Height="40" VerticalAlignment="Stretch" FontSize="18"/>
