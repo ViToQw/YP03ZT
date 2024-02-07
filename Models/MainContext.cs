@@ -9,11 +9,12 @@ namespace ConferenceOrganizers.Models
 {
     public class MainContext : DbContext
     {
-        private readonly string connectionString = "Data source=DESKTOP-J021N6I;Initial catalog=Conference;Trusted_Connection=True;MultipleActiveResultSets=True;TrustServerCertificate=True;encrypt=False";
+       
         private readonly string connectionStringHomeVika = "Data source=WIN-P8QG83K3N0U;Initial catalog=Conference;Trusted_Connection=True;MultipleActiveResultSets=True;TrustServerCertificate=True;encrypt=False";
+        private readonly string connectionStringHomeSacha = "Data source=DESKTOP-RF9II86;Initial catalog=Conferencedb;Trusted_Connection=True;MultipleActiveResultSets=True;TrustServerCertificate=True;encrypt=False";
 
 
-        //connectionString="data source=192.168.227.14;initial catalog=Conference;persist security info=True;user id=user02;password=02;MultipleActiveResultSets=True;App=EntityFramework"
+        private readonly string connectionString = "data source=192.168.227.14;initial catalog=ConferenceZT;persist security info=True;user id=user02;password=02;MultipleActiveResultSets=True;App=EntityFramework";
 
         public MainContext()
         {
@@ -36,7 +37,7 @@ namespace ConferenceOrganizers.Models
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(connectionStringHomeVika);
+            optionsBuilder.UseSqlServer(connectionStringHomeSacha);
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

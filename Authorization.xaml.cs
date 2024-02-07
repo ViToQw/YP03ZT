@@ -154,5 +154,17 @@ namespace ConferenceOrganizers
                 e.Handled = true;
             }
         }
+
+        private void PasswordText_PasswordChanged(object sender, RoutedEventArgs e)
+        {
+            if(PasswordText.Password.Length > 0)
+            {
+                placeHolderPass.Visibility = Visibility.Collapsed;
+            }
+            else
+            {
+                placeHolderPass.Visibility = Visibility.Visible;
+            }
+        }
     }
 }

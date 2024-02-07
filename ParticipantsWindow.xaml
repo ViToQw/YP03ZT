@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ConferenceOrganizers"
         mc:Ignorable="d"
-        Title="ParticipantsWindow" Height="600" Width="1000" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Icon="logo.png">
+        Title="ParticipantsWindow" Height="600" Width="1020" ResizeMode="NoResize"  WindowStartupLocation="CenterScreen" Icon="logo.png">
     <Grid Style="{DynamicResource GridStyle}">
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"/>
@@ -35,7 +35,7 @@
         <TextBlock Grid.Column="0" Grid.ColumnSpan="10" Background="White"/>
 
         <TextBlock Grid.Column="2" Grid.ColumnSpan="4" Text="Участники" FontFamily="Tahoma" HorizontalAlignment="Center" Foreground="Black" FontWeight="Bold" VerticalAlignment="Center" FontSize="30"/>
-        <DataGrid Style="{DynamicResource MaterialDesignDataGrid}"  x:Name="GridAdmin" Grid.Column="1" Grid.ColumnSpan="9" Grid.Row="1" Grid.RowSpan="10" AutoGenerateColumns="False" Margin="10" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="15"  IsReadOnly="True">
+        <DataGrid Style="{DynamicResource MaterialDesignDataGrid}"  x:Name="GridAdmin" Grid.Column="0" Grid.ColumnSpan="7" Width="auto" Height="auto" Grid.Row="1" Grid.RowSpan="11" AutoGenerateColumns="False" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="15"  IsReadOnly="True">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ФИО" Binding="{Binding FIO}"/>
                 <DataGridTextColumn Header="Email" Binding="{Binding Email}"/>

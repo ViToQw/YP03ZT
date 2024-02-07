@@ -36,20 +36,20 @@ namespace ConferenceOrganizers
         {
             InitializeComponent();
 
-          /*  ParsingCountry();
-            ParsingCourse();
-            ParsingCity();
+            //ParsingCountry();
+            //ParsingCourse();
+            //ParsingCity();
 
-            ParsingJury();
-            ParsingModerator();
-            ParsingOrganizer();
-            ParsingParticipant();
+            //ParsingJury();
+            //ParsingModerator();
+            //ParsingOrganizer();
+            //ParsingParticipant();
 
-            ParsingActivity();
-            ParsingEvent();
+            //ParsingActivity();
+            //ParsingEvent();
 
-            ParsingActivityEvent();
-            ParsingActivityJury();*/
+            //ParsingActivityEvent();
+            //ParsingActivityJury();
 
             fullList = context.Events.ToList();
             fullList = context.Events.Include(e => e.City).ToList();
@@ -58,7 +58,7 @@ namespace ConferenceOrganizers
             services.ItemsSource = lists;
 
             timer = new DispatcherTimer();
-            timer.Interval = TimeSpan.FromSeconds(5);
+            timer.Interval = TimeSpan.FromSeconds(30);
             timer.Tick += Timer_Tick;
             timer.Start();
 
