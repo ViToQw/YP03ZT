@@ -3,9 +3,10 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+          xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:ConferenceOrganizers" xmlns:xctk="clr-namespace:ControlLib;assembly=NumericUpDown"
         mc:Ignorable="d"
-        Title="CreateEvent" Height="600" Width="1000" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Icon="logo.png">
+        Title="Конференции по информационной безопасности. Создание мероприятия." Height="600" Width="1000" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Icon="logo.png">
     <Grid Style="{DynamicResource GridStyle}">
         
         <Grid.RowDefinitions>
@@ -50,7 +51,7 @@
 
         <TextBlock Grid.Row="4" Text="Количество дней:" Grid.Column="1" Margin="10,0,0,0" FontSize="17" HorizontalAlignment="Right" VerticalAlignment="Center" FontFamily="Tahoma"/>
         <Border    Grid.Row="4" Grid.Column="2" Grid.ColumnSpan="2" Margin="10,5,10,5" Style="{DynamicResource CornerBorder}">
-            <TextBox x:Name="DayEvent" Margin="3" FontSize="17" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" BorderBrush="Transparent" KeyDown="DayEvent_KeyDown"/>
+            <TextBox x:Name="DayEvent" Margin="3" FontSize="17" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" BorderBrush="Transparent" KeyDown="DayEvent_KeyDown" MaxLength="2" Style="{StaticResource MaterialDesignTextBox}" materialDesign:TextFieldAssist.CharacterCounterVisibility="Collapsed"/>
         </Border>
 
         <TextBlock Grid.Row="5" Text="Город:" Grid.Column="1"  Margin="10,0,0,0" FontSize="17" HorizontalAlignment="Right" VerticalAlignment="Center" FontFamily="Tahoma"/>
@@ -67,7 +68,7 @@
 
         <TextBlock Grid.Row="7" Text="Название:" Grid.Column="1" Margin="10,0,0,0" FontSize="17" HorizontalAlignment="Right" VerticalAlignment="Center" FontFamily="Tahoma"/>
         <Border    Grid.Row="7" Grid.Column="2" Grid.ColumnSpan="2" Margin="10,5,10,5" Style="{DynamicResource CornerBorder}">
-            <TextBox x:Name="NameAct" Margin="3" FontSize="17" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" BorderBrush="Transparent"/>
+            <TextBox x:Name="NameAct" Margin="3" FontSize="17" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" BorderBrush="Transparent" MaxLength="100" materialDesign:TextFieldAssist.CharacterCounterVisibility="Collapsed"/>
         </Border>
 
         <TextBlock  Grid.Row="8" Text="Время начала:" Grid.Column="1" Margin="10,0,0,0" FontSize="17" HorizontalAlignment="Right" VerticalAlignment="Center" FontFamily="Tahoma"/>
@@ -78,7 +79,7 @@
 
         <TextBlock Grid.Row="9" Text="Количество дней:" Grid.Column="1" Margin="10,0,0,0" FontSize="17" HorizontalAlignment="Right" VerticalAlignment="Center" FontFamily="Tahoma"/>
         <Border    Grid.Row="9" Grid.Column="2" Grid.ColumnSpan="2" Margin="10,5,10,5" Style="{DynamicResource CornerBorder}">
-            <TextBox x:Name="DayAct" Margin="3" FontSize="17" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" BorderBrush="Transparent" KeyDown="DayAct_KeyDown"/>
+            <TextBox x:Name="DayAct" Margin="3" FontSize="17" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" BorderBrush="Transparent" KeyDown="DayAct_KeyDown" MaxLength="2" materialDesign:TextFieldAssist.CharacterCounterVisibility="Collapsed"/>
         </Border>
 
         <Button Name="OkButton" Grid.Column="5" Grid.Row="9" Style="{DynamicResource CustomDesignButton}" Width="100" Margin="5" FontSize="14" Padding="-10" Content="Ок" FontFamily="Tahoma" HorizontalAlignment="Right" BorderThickness="3" Click="OkButton_Click" />
