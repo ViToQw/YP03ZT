@@ -425,7 +425,7 @@ namespace ConferenceOrganizers
             EventNameText.Foreground = Brushes.Gray;
         }
 
-        private void Phone_LostFocus(object sender, RoutedEventArgs e)
+       /* private void Phone_LostFocus(object sender, RoutedEventArgs e)
         {
             var phoneTextBox = sender as TextBox;
             if (phoneTextBox != null)
@@ -437,7 +437,7 @@ namespace ConferenceOrganizers
                     MessageBox.Show("Неверный формат телефонного номера. Пожалуйста, используйте формат +7(999)-099-90-90", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
             }
-        }
+        }*/
 
         private void PasswordCheckBox_Checked(object sender, RoutedEventArgs e)
         {

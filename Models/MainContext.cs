@@ -37,7 +37,7 @@ namespace ConferenceOrganizers.Models
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(connectionStringHomeSacha);
+            optionsBuilder.UseSqlServer(connectionStringHomeVika);
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

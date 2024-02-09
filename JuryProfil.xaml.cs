@@ -40,7 +40,7 @@ namespace ConferenceOrganizers
             }
             else
             {
-                Greeting.Text = $"Добрый вечер!\n{jury.Name} {jury.Patronimic}";
+                Greeting.Text = $"Добрый день!\n{jury.Name} {jury.Patronimic}";
             }
 
             var bitmap = new BitmapImage();

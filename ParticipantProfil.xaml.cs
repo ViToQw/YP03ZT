@@ -40,7 +40,7 @@ namespace ConferenceOrganizers
             }
             else
             {
-                Greeting.Text = $"Добрый вечер!\n{participant.Name} {participant.Patronimic}";
+                Greeting.Text = $"Добрый день!\n{participant.Name} {participant.Patronimic}";
             }
 
 

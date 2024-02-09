@@ -70,8 +70,7 @@ namespace ConferenceOrganizers
 
         private void RegButton_Click(object sender, RoutedEventArgs e)
         {
-            RegParticipantWin regParticipantWin = new RegParticipantWin();
-            regParticipantWin.Show();
+         
         }
 
         private int failedAttempts = 0;
@@ -157,7 +156,7 @@ namespace ConferenceOrganizers
 
         private void PasswordText_PasswordChanged(object sender, RoutedEventArgs e)
         {
-            if(PasswordText.Password.Length > 0)
+            if(PasswordText.Password.Length > 0) 
             {
                 placeHolderPass.Visibility = Visibility.Collapsed;
             }
