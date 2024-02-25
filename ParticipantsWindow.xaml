@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ConferenceOrganizers"
         mc:Ignorable="d"
-        Title="Конференции по информационной безопасности. Список участников" Height="600" Width="1020" ResizeMode="NoResize"  WindowStartupLocation="CenterScreen" Icon="logo.png">
+        Title="Конференции по информационной безопасности. Список участников" Height="600" Width="1055" ResizeMode="NoResize"  WindowStartupLocation="CenterScreen" Icon="logo.png">
     <Grid Style="{DynamicResource GridStyle}">
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"/>

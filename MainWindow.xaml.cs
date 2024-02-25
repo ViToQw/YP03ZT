@@ -8,10 +8,12 @@ using System.Collections.ObjectModel;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
@@ -32,6 +34,7 @@ namespace ConferenceOrganizers
         public ObservableCollection<Event> lists { get; set; }
         public List<Event> fullList { get; set; }
         private DispatcherTimer timer;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -50,24 +53,115 @@ namespace ConferenceOrganizers
 
             //ParsingActivityEvent();
             //ParsingActivityJury();
+            var userId = AppSettings.Default.userId;
+            var userPassword = AppSettings.Default.userPassword;
+            var role = AppSettings.Default.role;
+            if(userId!=0 && userPassword!=null) {
+                RemoveClickEvent(LogIn);
+                LogIn.Click += OpenProfile;
+                switch (role)
+                {
+                    case "participant":
+                        LogIn.Content = "Профиль";
+                        break;
+                    case "organizer":
+                        LogIn.Content = "Профиль";
+                        break;
+                    case "moderator":
+                        LogIn.Content = "Профиль";
+                        break;
+                    case "jury":
+                        LogIn.Content = "Профиль";
+                        break;
+                    default:
+                        MessageBox.Show("Ошибка", "Мы не смогли разспознать вашу роль в системе, простите(:");
+                        break;
+                }
+                    
+            }
 
             fullList = context.Events.ToList();
             fullList = context.Events.Include(e => e.City).ToList();
             lists = new ObservableCollection<Event>(fullList);
 
             services.ItemsSource = lists;
-
-            timer = new DispatcherTimer();
-            timer.Interval = TimeSpan.FromSeconds(30);
-            timer.Tick += Timer_Tick;
-            timer.Start();
-
             UpdateEvents();
         }
-
-        private void Timer_Tick(object sender, EventArgs e)
+        private void RemoveClickEvent(Button b)
         {
-            UpdateEvents();
+            var routedEventHandlers = GetRoutedEventHandlers(b, ButtonBase.ClickEvent);
+            foreach (var routedEventHandler in routedEventHandlers)
+                b.Click -= (RoutedEventHandler)routedEventHandler.Handler;
+        }
+        public static RoutedEventHandlerInfo[] GetRoutedEventHandlers(UIElement element, RoutedEvent routedEvent)
+        {
+            // Get the EventHandlersStore instance which holds event handlers for the specified element.
+            // The EventHandlersStore class is declared as internal.
+            var eventHandlersStoreProperty = typeof(UIElement).GetProperty(
+                "EventHandlersStore", BindingFlags.Instance | BindingFlags.NonPublic);
+            object eventHandlersStore = eventHandlersStoreProperty.GetValue(element, null);
+
+            // Invoke the GetRoutedEventHandlers method on the EventHandlersStore instance 
+            // for getting an array of the subscribed event handlers.
+            var getRoutedEventHandlers = eventHandlersStore.GetType().GetMethod(
+                "GetRoutedEventHandlers", BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic);
+            var routedEventHandlers = (RoutedEventHandlerInfo[])getRoutedEventHandlers.Invoke(
+                eventHandlersStore, new object[] { routedEvent });
+
+            return routedEventHandlers;
+        }
+
+        private void OpenProfile(object sender, RoutedEventArgs e)
+        {
+            var userId = AppSettings.Default.userId;
+            var userPassword = AppSettings.Default.userPassword;
+            var role = AppSettings.Default.role;
+            if (userId != 0 && userPassword != null)
+            {
+                switch (role)
+                {
+                    case "participant":
+                        var participant = context.Participants.FirstOrDefault(p => p.Id == userId && p.Password == userPassword);
+                        if (participant != null) { 
+                            ParticipantProfil participantsWindow = new ParticipantProfil(participant);
+                            participantsWindow.Show();
+                            this.Close();
+                        }
+
+                        break;
+                    case "organizer":
+                        var organizer = context.Organizers.FirstOrDefault(o => o.Id == userId && o.Password == userPassword);
+                        if (organizer!=null)
+                        {
+                            OrganizerWindow organizerWindow = new OrganizerWindow(organizer);
+                            organizerWindow.Show();
+                            this.Close();
+                        }
+                        break;
+                    case "moderator":
+                        var moderator = context.Moderators.FirstOrDefault(m => m.Id == userId && m.Password == userPassword);
+                        if (moderator!=null)
+                        {
+                            ModeratorProfil moderatorProfil = new ModeratorProfil(moderator);
+                            moderatorProfil.Show();
+                            this.Close();
+                        }
+                        break;
+                    case "jury":
+                        var jury = context.Juries.FirstOrDefault(j => j.Id == userId && j.Password == userPassword);
+                        if (jury!=null)
+                        {
+                            JuryProfil juryProfil = new JuryProfil(jury);
+                            juryProfil.Show();
+                            this.Close();
+                        }
+                        break;
+                    default:
+                        MessageBox.Show("Ошибка", "Мы не смогли разспознать вашу роль в системе, простите(:");
+                        break;
+                }
+
+            }
         }
 
         private void UpdateEvents()
@@ -540,8 +634,10 @@ namespace ConferenceOrganizers
 
         private void LoginButton_Click(object sender, RoutedEventArgs e)
         {
+            
             Authorization authorization = new Authorization();
             authorization.Show();
+            this.Close();
         }
 
         private void SortFilter()
@@ -584,5 +680,7 @@ namespace ConferenceOrganizers
         {
             SortFilter();
         }
+
+        
     }
 }

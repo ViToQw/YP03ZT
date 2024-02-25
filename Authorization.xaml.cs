@@ -86,6 +86,7 @@ namespace ConferenceOrganizers
                 if (string.IsNullOrWhiteSpace(IdNumberText.Text) || string.IsNullOrWhiteSpace(PasswordText.Password))
                 {
                     MessageBox.Show("Пожалуйста, введите ID и пароль!", "Ошибка!", MessageBoxButton.OK, MessageBoxImage.Error);
+                    CaptchaImage.Source = GenerateCaptcha();
                     return;
                 }
 
@@ -102,24 +103,36 @@ namespace ConferenceOrganizers
                     if (participant != null)
                     {
                         ParticipantProfil participantsWindow = new ParticipantProfil(participant);
+                        AppSettings.Default.userId = participant.Id;
+                        AppSettings.Default.userPassword = participant.Password;
+                        AppSettings.Default.role = "participant";
                         participantsWindow.Show();
                         this.Close();
                     }
                     else if (organizer != null)
                     {
                         OrganizerWindow organizerWindow = new OrganizerWindow(organizer);
+                        AppSettings.Default.userId = organizer.Id;
+                        AppSettings.Default.userPassword = organizer.Password;
+                        AppSettings.Default.role = "organizer";
                         organizerWindow.Show();
                         this.Close();
                     }
                     else if (moderator != null)
                     {
                         ModeratorProfil moderatorProfil = new ModeratorProfil(moderator);
+                        AppSettings.Default.userId = moderator.Id;
+                        AppSettings.Default.userPassword = moderator.Password;
+                        AppSettings.Default.role = "moderator";
                         moderatorProfil.Show();
                         this.Close();
                     }
                     else if (jury != null)
                     {
                         JuryProfil juryProfil = new JuryProfil(jury);
+                        AppSettings.Default.userId = jury.Id;
+                        AppSettings.Default.userPassword = jury.Password;
+                        AppSettings.Default.role = "jury";
                         juryProfil.Show();
                         this.Close();
                     }
@@ -136,6 +149,7 @@ namespace ConferenceOrganizers
                         else
                         {
                             MessageBox.Show("Неверный ID или пароль!", "Ошибка!", MessageBoxButton.OK, MessageBoxImage.Error);
+                            CaptchaImage.Source = GenerateCaptcha();
                         }
                     }
                 }
@@ -164,6 +178,19 @@ namespace ConferenceOrganizers
             {
                 placeHolderPass.Visibility = Visibility.Visible;
             }
+        }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+           
+           
+        }
+
+        private void BackButton_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
+            this.Close();
         }
     }
 }

@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:ConferenceOrganizers"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="Конференции по информационной безопасности. Авторизация" Height="600" Width="1000" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Icon="logo.png">
+        Title="Конференции по информационной безопасности. Авторизация" Height="600" Width="1000" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Icon="logo.png" Closing="Window_Closing">
 
     <Grid Style="{DynamicResource GridStyle}">
         <Grid.RowDefinitions>
@@ -91,7 +91,7 @@
                 </Style>
             </TextBlock.Style>
         </TextBlock>
-       
+        <Button Name="BackButton" Height="50"  Width="220" Grid.Row="5" Style="{DynamicResource CustomDesignButton}" Margin="50 0"  FontSize="22"  Content="Вернуться в каталог"  FontFamily="Tahoma" HorizontalAlignment="Left" BorderThickness="3" Click="BackButton_Click" />
 
         <Button Name="LogInButton" Height="50"  Width="200" Grid.Row="5" Style="{DynamicResource CustomDesignButton}"  FontSize="22"  Content="Войти" FontFamily="Tahoma" HorizontalAlignment="Center" BorderThickness="3" Click="LogInButton_Click" />
     

@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ConferenceOrganizers"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
           xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
         Title="Конференции по информационной безопасности. Профиль участника" Height="600" Width="1000" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Icon="logo.png">
@@ -56,7 +57,7 @@
 
         <TextBlock Grid.Row="6" Text="Телефон:" Grid.Column="0"  Margin="10,0,0,0" FontSize="17" HorizontalAlignment="Right" VerticalAlignment="Center" FontFamily="Tahoma"/>
         <Border    Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="2" Margin="10,5,10,5" Style="{DynamicResource CornerBorder}">
-            <TextBox x:Name="Phone" Margin="3" FontSize="17" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" BorderBrush="Transparent" KeyDown="Phone_KeyDown" LostFocus="Phone_LostFocus" Text="{Binding Path=Phone}" MaxLength="20" materialDesign:TextFieldAssist.CharacterCounterVisibility="Collapsed"/>
+            <xctk:MaskedTextBox Mask="+7(999)-000-00-00" x:Name="Phone" Margin="3" FontSize="17" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" BorderBrush="Transparent" KeyDown="Phone_KeyDown" LostFocus="Phone_LostFocus" Text="{Binding Path=Phone}" MaxLength="20" materialDesign:TextFieldAssist.CharacterCounterVisibility="Collapsed"/>
         </Border>
 
         <TextBlock Grid.Row="7" Text="Пароль:" Grid.Column="0"  Margin="10,0,0,0" FontSize="17" HorizontalAlignment="Right" VerticalAlignment="Center" FontFamily="Tahoma"/>
@@ -64,13 +65,14 @@
             <PasswordBox x:Name="Password" Margin="3" FontSize="17" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" BorderBrush="Transparent" LostFocus="Password_LostFocus" MaxLength="50" materialDesign:TextFieldAssist.CharacterCounterVisibility="Collapsed"/>
         </Border>
 
-        <Button Name="RegButton"  Margin="10 5" Grid.Column="1" Grid.ColumnSpan="2" Width="200" Grid.Row="8" Style="{DynamicResource CustomDesignButton}" FontSize="16" Content="Изменить данные" FontFamily="Tahoma" HorizontalAlignment="Right"  Click="RegButton_Click" />
-        <Button Name="Exit"  Margin="10 5" Grid.Column="1" Grid.ColumnSpan="2" Width="120" Grid.Row="8" Style="{DynamicResource CustomDesignButton}" FontSize="16"  Content="Выйти" FontFamily="Tahoma" HorizontalAlignment="Left" Click="Exit_Click"   />
+        <Button Name="RegButton"  Margin="10 5" Grid.Column="1" Grid.ColumnSpan="2" Width="200" Grid.Row="8" Style="{DynamicResource CustomDesignButton}" FontSize="16" Content="Изменить данные" FontFamily="Tahoma" HorizontalAlignment="Right"  Click="RegButton_Click"/>
+        <Button Name="Exit"  Margin="18 5" Grid.Column="1" Grid.ColumnSpan="2" Width="170" Grid.Row="8" Style="{DynamicResource CustomDesignButton}" FontSize="16"  Content="Выйти из аккаунта" FontFamily="Tahoma" HorizontalAlignment="Left" Click="Exit_Click"/>
+        <Button Name="OpenCatalog"  Margin="2 5" Grid.Column="0" Grid.ColumnSpan="2" Width="155" Grid.Row="8" Style="{DynamicResource CustomDesignButton}" FontSize="16"  Content="Перейти в каталог" FontFamily="Tahoma" HorizontalAlignment="Left" Click="OpenCatalog_Click"/>
 
         <Border Grid.Row="2" Grid.Column="3" Grid.ColumnSpan="2" Grid.RowSpan="6" Margin="10 0" Style="{DynamicResource CornerBorder}">
             <Image x:Name="mainImage" Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="3" Grid.RowSpan="7" HorizontalAlignment="Stretch" VerticalAlignment="Top" Source="{Binding Path=Photo}"/>
         </Border>
-        <Button Name="ImageBut" Grid.Column="3" Grid.ColumnSpan="2" Width="200" Grid.Row="8" Style="{DynamicResource CustomDesignButton}" Margin="10,5,0,5" FontSize="16" Padding="-10" Content="Сменить фото" FontFamily="Tahoma" HorizontalAlignment="Center" BorderThickness="3" Click="ImageBut_Click" />
+        <Button Name="ImageBut" Grid.Column="3" Grid.ColumnSpan="2" Width="200" Grid.Row="8" Style="{DynamicResource CustomDesignButton}" Margin="10,5,0,5" FontSize="16" Padding="-10" Content="Сменить фото" FontFamily="Tahoma" HorizontalAlignment="Center" BorderThickness="3" Click="ImageBut_Click"/>
 
     </Grid>
 </Window>
