@@ -42,7 +42,8 @@
         </Border>
 
         <Button Width="260" Height="50" Name="RegButton" Grid.Column="2" Grid.ColumnSpan="3" Grid.Row="9" Style="{DynamicResource CustomDesignButton}"  FontSize="20"  Content="Зарегистрироваться" FontFamily="Tahoma" HorizontalAlignment="Center" BorderThickness="3" Click="RegButton_Click" />
-        <Button Width="260" Height="50" Name="Exit" Grid.Column="0" Grid.Row="9" Style="{DynamicResource CustomDesignButton}"  FontSize="20"  Content="Выйти" FontFamily="Tahoma" HorizontalAlignment="Center" BorderThickness="3" Click="Exit_Click"  />
+        <Button Width="200" Height="50" Name="Exit" Margin="10 0" Grid.Column="0" Grid.Row="9" Style="{DynamicResource CustomDesignButton}"  FontSize="20"  Content="Выйти из аккаунта" FontFamily="Tahoma" HorizontalAlignment="Left" BorderThickness="3" Click="Exit_Click"  />
+        <Button Width="200" Height="50" Name="OpenCatalog" Grid.Column="0" Grid.Row="9" Style="{DynamicResource CustomDesignButton}"  FontSize="20"  Content="Перейти в каталог" FontFamily="Tahoma" HorizontalAlignment="Right" BorderThickness="3" Click="OpenCatalog_Click"   />
 
 
     </Grid>

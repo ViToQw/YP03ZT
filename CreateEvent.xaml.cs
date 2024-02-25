@@ -47,9 +47,14 @@ namespace ConferenceOrganizers
             if (result == MessageBoxResult.Yes)
             {
                 DateTime date = datePicker.SelectedDate ?? DateTime.Today;
-                int hour = (int)numericHour.Value;
-                int minute = (int)numericMin.Value;
-                DateTime dateTime = new DateTime(date.Year, date.Month, date.Day, hour, minute, 0);
+
+                DateTime? selectedTime = time.SelectedTime;
+                if (!selectedTime.HasValue)
+                {
+                    MessageBox.Show("Вы не выбрали время", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                    return;
+                }
+                DateTime dateTime = new DateTime(date.Year, date.Month, date.Day, selectedTime.Value.Hour, selectedTime.Value.Minute, 0);
                 DateTime currentDateTime = DateTime.Now;
                 if (dateTime >= currentDateTime)
                 {
@@ -257,6 +262,19 @@ namespace ConferenceOrganizers
             else
             {
 
+            }
+        }
+
+        private void time_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            e.Handled = true;
+        }
+
+        private void time_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Space || e.Key == Key.Back)
+            {
+                e.Handled = true;
             }
         }
     }

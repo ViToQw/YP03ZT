@@ -73,10 +73,11 @@
 
         <TextBlock  Grid.Row="8" Text="Время начала:" Grid.Column="1" Margin="10,0,0,0" FontSize="17" HorizontalAlignment="Right" VerticalAlignment="Center" FontFamily="Tahoma"/>
         <StackPanel Grid.Row="8" Grid.Column="2" Grid.ColumnSpan="2" Margin="10,5,10,5" Orientation="Horizontal">
-            <xctk:NumericUpDown x:Name="numericHour" FontSize="17"  Width="50" HorizontalAlignment="Center" Margin="2" MinValue="9" MaxValue="18"/>
-            <xctk:NumericUpDown x:Name="numericMin"  FontSize="17"  Width="50" HorizontalAlignment="Center" Margin="2" MaxValue="30" Increment="30"/>
+            <!--<xctk:NumericUpDown x:Name="numericHour" FontSize="17"  Width="50" HorizontalAlignment="Center" Margin="2" MinValue="9" MaxValue="18"/>
+            <xctk:NumericUpDown x:Name="numericMin"  FontSize="17"  Width="50" HorizontalAlignment="Center" Margin="2" MaxValue="30" Increment="30"/>-->
+            <materialDesign:TimePicker x:Name="time" FontSize="17"  HorizontalAlignment="Center" Is24Hours="True" materialDesign:TextFieldAssist.CharacterCounterVisibility="Collapsed" PreviewTextInput="time_PreviewTextInput" PreviewKeyDown="time_PreviewKeyDown" />
         </StackPanel>
-
+         
         <TextBlock Grid.Row="9" Text="Количество дней:" Grid.Column="1" Margin="10,0,0,0" FontSize="17" HorizontalAlignment="Right" VerticalAlignment="Center" FontFamily="Tahoma"/>
         <Border    Grid.Row="9" Grid.Column="2" Grid.ColumnSpan="2" Margin="10,5,10,5" Style="{DynamicResource CornerBorder}">
             <TextBox x:Name="DayAct" Margin="3" FontSize="17" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" BorderBrush="Transparent" KeyDown="DayAct_KeyDown" MaxLength="2" materialDesign:TextFieldAssist.CharacterCounterVisibility="Collapsed"/>

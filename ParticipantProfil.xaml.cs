@@ -109,7 +109,10 @@ namespace ConferenceOrganizers
                 context.SaveChanges();
             }
 
+
             MessageBox.Show("Данные успешно обновлены!", "Успех", MessageBoxButton.OK, MessageBoxImage.Information);
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
             this.Close();
         }
 
@@ -159,6 +162,18 @@ namespace ConferenceOrganizers
 
         private void Exit_Click(object sender, RoutedEventArgs e)
         {
+            AppSettings.Default.userId = 0;
+            AppSettings.Default.userPassword = null;
+            AppSettings.Default.role = null;
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
+            this.Close();
+        }
+
+        private void OpenCatalog_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
             this.Close();
         }
     }
