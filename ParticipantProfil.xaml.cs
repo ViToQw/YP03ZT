@@ -109,6 +109,7 @@ namespace ConferenceOrganizers
                 context.SaveChanges();
             }
 
+
             MessageBox.Show("Данные успешно обновлены!", "Успех", MessageBoxButton.OK, MessageBoxImage.Information);
             MainWindow mainWindow = new MainWindow();
             mainWindow.Show();
